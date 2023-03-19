@@ -21,7 +21,7 @@ void main(){
           brightness: Brightness.light,
       ),
     ),
-    home: homescreen()
+    home: new_list()
     ),
   );
 }
