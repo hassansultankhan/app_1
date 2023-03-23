@@ -34,5 +34,27 @@ class _new_listState extends State<new_list> {
       ),
     );
   }
-  getdata
+  getdata() async {
+    var countryPointer = widget.countryName.toString();
+    // var url = Uri.parse(
+        // 'https://flight-radar1.p.rapidapi.com/aircrafts/list');
+    var response = await http.get(Uri.parse(
+        'https://flight-radar1.p.rapidapi.com/aircrafts/list'),
+        headers: {
+    'X-RapidAPI-Key': '6813aa3299msh1d51e2ab9582d84p18160ajsn37bd265c2323',
+    'X-RapidAPI-Host': 'flight-radar1.p.rapidapi.com'
+  }
+        );
+    List<dynamic> data = jsonDecode(response.body);
+    if (mounted) {
+      setState(() {
+
+        unidata = university.getuniveritydata(data);
+        loading = true;
+
+      });
+    }
+  }
 }
+
+
