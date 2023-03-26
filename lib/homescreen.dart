@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http; //for makign http requests
+import 'dart:convert'; //for data conversion between JSON and others
+import 'flight.dart';
+
+
+
 
 class new_list extends StatefulWidget {
   const new_list({Key? key}) : super(key: key);
@@ -9,35 +15,40 @@ class new_list extends StatefulWidget {
 
 class _new_listState extends State<new_list> {
   @override
+List<flight> flightsdata = [];
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("New List"),
         centerTitle: true,
       ),
-      body: Container(
-        child: Column(
-          children: [
-            ListView.builder(
-              itemCount: ,
+      body:   ListView.builder(
+              itemCount: flightsdata.length,
               itemBuilder: (context, index){
                 return Column(
+                  crossAxisAlignment:CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(data)
-                  ],
+                  
+                    Text(
+                      '${flightsdata[index].description}'
+                    ),
+                    Text(
+                      '${flightsdata[index].model}',
+                    )
+                            ],
 
-                );
+                            );
               }
               )
-          ],
-        ),
-      ),
     );
+
+
   }
   getdata() async {
-    var countryPointer = widget.countryName.toString();
-    // var url = Uri.parse(
-        // 'https://flight-radar1.p.rapidapi.com/aircrafts/list');
+    // var countryPointer = widget.countryName.toString();
+    
     var response = await http.get(Uri.parse(
         'https://flight-radar1.p.rapidapi.com/aircrafts/list'),
         headers: {
@@ -49,8 +60,8 @@ class _new_listState extends State<new_list> {
     if (mounted) {
       setState(() {
 
-        unidata = university.getuniveritydata(data);
-        loading = true;
+        flightsdata = flight.getflightsdata(data);
+        // loading = true;
 
       });
     }
