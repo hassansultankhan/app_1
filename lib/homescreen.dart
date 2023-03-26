@@ -48,9 +48,8 @@ List<flight> flightsdata = [];
   }
   getdata() async {
     // var countryPointer = widget.countryName.toString();
-    
-    var response = await http.get(Uri.parse(
-        'https://flight-radar1.p.rapidapi.com/aircrafts/list'),
+    const String  url ='https://flight-radar1.p.rapidapi.com/aircrafts/list';
+    var response = await http.get(Uri.parse(url),
         headers: {
     'X-RapidAPI-Key': '6813aa3299msh1d51e2ab9582d84p18160ajsn37bd265c2323',
     'X-RapidAPI-Host': 'flight-radar1.p.rapidapi.com'
