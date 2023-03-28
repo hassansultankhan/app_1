@@ -34,9 +34,9 @@ List<flight> flightsdata = [];
                     Text(
                       '${flightsdata[index].description}'
                     ),
-                    Text(
-                      '${flightsdata[index].model}',
-                    )
+                    // Text(
+                    //   '${flightsdata[index].model}',
+                    // )
                             ],
 
                             );
@@ -55,7 +55,7 @@ List<flight> flightsdata = [];
     'X-RapidAPI-Host': 'flight-radar1.p.rapidapi.com'
   }
         );
-    List<dynamic> data = jsonDecode(response.body);
+    Map<String, dynamic> data = jsonDecode(response.body);
     if (mounted) {
       setState(() {
 
