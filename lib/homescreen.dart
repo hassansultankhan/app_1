@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:http/http.dart' as http; //for makign http requests
 import 'dart:convert'; //for data conversion between JSON and others
 import 'flight.dart';
@@ -23,25 +24,34 @@ List<flight> flightsdata = [];
         title: Text("New List"),
         centerTitle: true,
       ),
-      body:   ListView.builder(
+      body:SingleChildScrollView( 
+      child:Container(
+      child:Column(
+      children:[
+        ElevatedButton(onPressed: getdata, child: Text('get data')),
+       ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: flightsdata.length,
               itemBuilder: (context, index){
                 return Column(
                   crossAxisAlignment:CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                  
+
                     Text(
                       '${flightsdata[index].description}'
                     ),
-                    // Text(
-                    //   '${flightsdata[index].model}',
-                    // )
+                    Text( '${flightsdata[index].model}',)
                             ],
 
                             );
               }
               )
+      ]
+    ),
+      ),
+      ),
     );
 
 
