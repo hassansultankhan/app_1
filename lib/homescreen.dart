@@ -39,10 +39,13 @@ List<flight> flightsdata = [];
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
 
-                    Text(
-                      '${flightsdata[index].description}'
-                    ),
-                    Text( '${flightsdata[index].model}',)
+                    Text('${flightsdata[index].description}'),
+                    Text( '${flightsdata[index].model}'),
+                    Text('${flightsdata[index].length}'),
+                    Text('${flightsdata[index].model[0]}'),
+                    
+
+                    Text('${flightsdata[index].names}'),
                             ],
 
                             );
