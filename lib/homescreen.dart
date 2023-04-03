@@ -43,9 +43,7 @@ List<flight> flightsdata = [];
                     Text( '${flightsdata[index].model}'),
                     Text('${flightsdata[index].length}'),
                     Text('${flightsdata[index].model[0]}'),
-                    
-
-                    Text('${flightsdata[index].names}'),
+                    Text('${flightsdata[index].someMap['Name']}'),
                             ],
 
                             );
