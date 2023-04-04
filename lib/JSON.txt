@@ -1,0 +1,16 @@
+0:
+{
+description:"Airbus A220 family"
+models:0:[
+    {
+Name:"Airbus A220-100"
+Code:"BCS1"
+    }
+]
+1:[
+{
+Name:"Airbus A220-300"
+Code:"BCS3"
+}
+]
+}
