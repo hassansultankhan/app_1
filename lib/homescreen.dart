@@ -42,8 +42,12 @@ List<flight> flightsdata = [];
                     Text('${flightsdata[index].description}'),
                     Text( '${flightsdata[index].model}'),
                     Text('${flightsdata[index].length}'),
-                    Text('${flightsdata[index].model[0]}'),
-                    Text('${flightsdata[index].someMap['Name']}'),
+                    Text('${flightsdata[index].model[0]["Name"]}'),
+                    // Text('${flightsdata[index].someMap.values}'),
+                    Text("${flightsdata[index].names}"),
+              
+                    Container(color: Color.fromARGB(255, 27, 159, 27), height: 10,),
+      
                             ],
 
                             );
