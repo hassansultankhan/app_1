@@ -37,19 +37,27 @@ List<flight> flightsdata = [];
                 return Column(
                   crossAxisAlignment:CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
+                
+                  children:<Widget> [
+                    // Padding(padding: EdgeInsets.fromLTRB(5, 10, 0, 10),
+                    // child:InkWell(
 
-                    Text('${flightsdata[index].description}'),
-                    Text( '${flightsdata[index].model}'),
-                    Text('${flightsdata[index].length}'),
-                    Text('${flightsdata[index].model[0]["Name"]}'),
-                    // Text('${flightsdata[index].someMap.values}'),
-                    Text("${flightsdata[index].names}"),
-              
-                    Container(color: Color.fromARGB(255, 27, 159, 27), height: 10,),
+                                  Text('${flightsdata[index].description}'),
+                                  // Text( '${flightsdata[index].model}'),
+                                  // Text('${flightsdata[index].length}'),a
+                                          // for (int i =0 ; i < flightsdata[index].length; i++)
+                                          //   Text(
+                                          //     "Aircraft Name: ${flightsdata[index].names} Aircraft Code: ${flightsdata[index].codes}"
+                                          //     ),
+                                            
+                                  // Text('${flightsdata[index].model[0]["Name"]}'),       
+                                  // Text('${flightsdata[index].someMap.values}'),
+                                  Text('${flightsdata[index].detils}'),
+                                  Container(color: Color.fromARGB(255, 27, 159, 27), height: 10,),
       
+                     
                             ],
-
+                            
                             );
               }
               )
