@@ -1,5 +1,5 @@
+import 'package:app_1/acDetails.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:http/http.dart' as http; //for makign http requests
 import 'dart:convert'; //for data conversion between JSON and others
 import 'flight.dart';
@@ -39,10 +39,33 @@ List<flight> flightsdata = [];
                   mainAxisAlignment: MainAxisAlignment.start,
                 
                   children:<Widget> [
-                    // Padding(padding: EdgeInsets.fromLTRB(5, 10, 0, 10),
-                    // child:InkWell(
+                    Padding(padding: EdgeInsets.fromLTRB(5, 2, 0, 2),
+                    child:InkWell(
+                      child:Card( 
+                                    
+                                        shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10.0),
+                                        ),
 
-                                  Text('${flightsdata[index].description}'),
+                                        elevation: 5,
+                                        margin: EdgeInsets.all(10),
+                                        color: Color.fromARGB(255, 163, 232, 243),
+                                        shadowColor: Color.fromARGB(255, 98, 131, 207),
+
+                                        child: Container(
+                                          padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                          height: 50,
+                                          width: MediaQuery.of(context).size.width,
+                                          
+                                          child: ListTile(
+                                          title: Text('${flightsdata[index].description}',),
+                                          ),
+                                        ),
+
+                    ),
+                    onTap: () => moveToDetails(flightsdata[index]),
+                    ),
+                    ),
                                   // Text( '${flightsdata[index].model}'),
                                   // Text('${flightsdata[index].length}'),a
                                           // for (int i =0 ; i < flightsdata[index].length; i++)
@@ -52,8 +75,8 @@ List<flight> flightsdata = [];
                                             
                                   // Text('${flightsdata[index].model[0]["Name"]}'),       
                                   // Text('${flightsdata[index].someMap.values}'),
-                                  Text('${flightsdata[index].detils}'),
-                                  Container(color: Color.fromARGB(255, 27, 159, 27), height: 10,),
+                                  // Text('${flightsdata[index].detils}'),
+                                  // Container(color: Color.fromARGB(255, 27, 159, 27), height: 10,),
       
                      
                             ],
@@ -87,6 +110,10 @@ List<flight> flightsdata = [];
 
       });
     }
+  }
+
+  moveToDetails(flight D){
+    Navigator.push(context, MaterialPageRoute(builder:((context) => acDetails(D) )));
   }
 }
 

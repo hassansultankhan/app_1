@@ -30,7 +30,7 @@ class flight {
         code = flt["models"][i]["Code"];
         names1.add(name);
         codes1.add(code);
-        detail = "Aircraft Name: ${flt["models"][i]["Name"]}  Aircraft Code: ${flt["models"][i]["Code"]}\n";
+        detail = "Aircraft Name: ${flt["models"][i]["Name"]}\nAircraft Code: ${flt["models"][i]["Code"]}\n\n";
         details1.add(detail);
       }
    
