@@ -25,6 +25,8 @@ List<flight> flightsdata = [];
         centerTitle: true,
       ),
       body:SingleChildScrollView( 
+        scrollDirection: Axis.vertical,
+
       child:Container(
       child:Column(
       children:[
@@ -116,5 +118,3 @@ List<flight> flightsdata = [];
     Navigator.push(context, MaterialPageRoute(builder:((context) => acDetails(D) )));
   }
 }
-
-
