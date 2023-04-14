@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:app_1/flight.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -25,7 +27,7 @@ class _acDetailsState extends State<acDetails> {
         centerTitle: true,
       ),
       body:SingleChildScrollView(
-        scrollDirection: Axis.vertical,
+        // scrollDirection: Axis.vertical,
         
       child: Container(
         decoration: BoxDecoration(
@@ -34,10 +36,15 @@ class _acDetailsState extends State<acDetails> {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         padding: EdgeInsets.only(left: 15),
-
-        child: Column(
-          
+        child:
+        ListView(
+          scrollDirection: Axis.vertical,
           children:[
+            SizedBox(height: 20,),
+
+        // child: Column(
+          
+          // children:[
         //   crossAxisAlignment: CrossAxisAlignment.start,
         //    children: [
         //     const Padding(padding: EdgeInsets.only(left: 20)),
@@ -52,13 +59,13 @@ class _acDetailsState extends State<acDetails> {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
         
-              // physics: const NeverScrollableScrollPhysics(),
-              itemCount: widget.flightDetails.length,
+              itemCount: 1,
+
               itemBuilder: ((context, index) {                
                 return Column(children: [
                   for(int i =0; i <widget.flightDetails.length; i++)
             ListTile( title:Text(widget.flightDetails.detils[i], style: stylepointer, ),
-            // dense: true,
+            dense: true,
             ),
                 ],);
               })
