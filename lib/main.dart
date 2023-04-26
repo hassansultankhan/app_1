@@ -1,4 +1,5 @@
-import 'package:app_1/homescreen.dart';
+
+import 'package:app_1/mainoptions.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -21,7 +22,7 @@ void main(){
           brightness: Brightness.light,
       ),
     ),
-    home: new_list()
+    home: const mainMenu(),
     ),
   );
 }

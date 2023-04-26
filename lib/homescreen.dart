@@ -11,11 +11,17 @@ class new_list extends StatefulWidget {
   const new_list({Key? key}) : super(key: key);
 
   @override
+
   State<new_list> createState() => _new_listState();
 }
 
 class _new_listState extends State<new_list> {
   @override
+    void initState(){
+    getdata();
+    super.initState();
+  }
+  
 List<flight> flightsdata = [];
 
   Widget build(BuildContext context) {
@@ -30,7 +36,7 @@ List<flight> flightsdata = [];
       child:Container(
       child:Column(
       children:[
-        ElevatedButton(onPressed: getdata, child: Text('get data')),
+        // ElevatedButton(onPressed: getdata, child: Text('get data')),
        ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),

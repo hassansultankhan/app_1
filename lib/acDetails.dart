@@ -1,8 +1,6 @@
-import 'dart:ffi';
-
 import 'package:app_1/flight.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+
 
 
 class acDetails extends StatefulWidget {
