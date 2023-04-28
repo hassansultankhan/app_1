@@ -10,7 +10,7 @@ class flight {
 
   static List<flight> getflightsdata(Map<dynamic, dynamic> data) {
     List<flight> flights = [];
-    Map<String, dynamic> map1 = {};
+    // Map<String, dynamic> map1 = {};
     for (final flt in data['rows']) {
       
       String description1 = flt['description'];

@@ -1,4 +1,4 @@
-import 'package:app_1/airports.dart';
+import 'package:app_1/airlines.dart';
 import 'package:app_1/homescreen.dart';
 import 'package:flutter/material.dart';
 
@@ -26,15 +26,18 @@ class mainMenu extends StatelessWidget {
                   )
                   );
                  },
-               child: Text("Aircraft List"),
+               child: Text("Aircraft list"),
                ),
-              SizedBox(height: 20,),
-              ElevatedButton(onPressed: (){
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => airports(),
-                ));
-              }
-              , child: Text("Airports List"))
+            
+            SizedBox(height:20),
+
+            ElevatedButton(onPressed: (){
+              Navigator.of(context).push(MaterialPageRoute
+              (builder: (context) => const airlines(),
+              )
+              );
+            }, 
+            child: Text("Airlines list"))
 
               
           ],

@@ -9,7 +9,7 @@ void main(){
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: const ColorScheme(
-           primary: Color.fromARGB(255, 144, 189, 235),// for inside containers
+          primary: Color.fromARGB(255, 144, 189, 235),// for inside containers
           secondary: Color.fromARGB(255, 63, 170, 202),//text
           surface: Color.fromARGB(255, 210, 227, 194),
           background: Color.fromARGB(255, 255, 255, 255),
